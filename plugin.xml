@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="CDT_Formatter.commands.category">
+      </category>
+      <command
+            name="Sample Command"
+            categoryId="CDT_Formatter.commands.category"
+            id="CDT_Formatter.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="CDT_Formatter.commands.sampleCommand"
+            class="de.nethus.plugin.cdtformatter.handlers.DefaultHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.cdt.ui.preferences.CEditorPreferencePage"
+            class="de.nethus.plugin.cdtformatter.preferences.CDTFormatterPreferencePage"
+            id="org.eclipse.cdt.ui.preferences.SaveActionsPreferencePage"
+            name="Save Format Actions ">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="de.nethus.plugin.cdtformatter.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   
+   <extension
+         id="cdt_formatter.Activator"
+         name="cdt_formatter.Activator"
+         point="org.eclipse.ui.startup">
+	   <startup class="de.nethus.plugin.cdtformatter.Activator"/>
+	</extension>
+   
+</plugin>
