@@ -11,13 +11,10 @@
 
 package de.nethus.plugin.cdtformatter.preferences;
 
-import org.eclipse.cdt.internal.ui.ICHelpContextIds;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.eclipse.ui.PlatformUI;
 
 import de.nethus.plugin.cdtformatter.Activator;
 import de.nethus.plugin.cdtformatter.CDTFormatter;
@@ -40,7 +37,6 @@ public class CDTFormatterPreferencePage extends FieldEditorPreferencePage implem
 
 	public static final String AUTO_SAVE_ID = "autosaveID";
 	private BooleanFieldEditor checkBox;
-	private IWorkbench workbench;
 	
 	// extentions org.eclipse.cdt.ui.preferences.CEditorPreferencePage
 	// extentions org.eclipse.cdt.ui.preferences.CPluginPreferencePage
@@ -64,7 +60,7 @@ public class CDTFormatterPreferencePage extends FieldEditorPreferencePage implem
 		
 		checkBox.setPreferenceName(AUTO_SAVE_ID);
 		checkBox.setPreferenceStore(Activator.getDefault().getPreferenceStore());
-		checkBox.setPreferencePage(this);
+		checkBox.setPage(this);
 		addField(checkBox);
 	}
 
@@ -72,17 +68,9 @@ public class CDTFormatterPreferencePage extends FieldEditorPreferencePage implem
 	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
 	 */
 	public void init(IWorkbench workbench) {
-		this.workbench = workbench;
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
         setDescription("CDT Formatter Configuration");
 	}
-	
-	@Override
-	public void createControl(Composite parent) {
-		super.createControl(parent);
-		PlatformUI.getWorkbench().getHelpSystem().setHelp(getControl(),
-				ICHelpContextIds.SAVE_ACTIONS_PREFERENCE_PAGE);
-	}	
 	
 	@Override
 	protected void performApply() {

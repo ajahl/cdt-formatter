@@ -12,7 +12,6 @@ package de.nethus.plugin.cdtformatter;
 import org.eclipse.cdt.core.ToolFactory;
 import org.eclipse.cdt.core.formatter.CodeFormatter;
 import org.eclipse.core.commands.Command;
-import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 
@@ -27,13 +26,10 @@ public class CDTFormatter  {
 		return instance;
 	}
 	
-	private CodeFormatter codeFormatter;
 	private Command command;
 	private ISaveActionExecutionListener executionListener;
-	private IWorkbench workbench;
 	
 	private CDTFormatter() {
-		codeFormatter = getOrCreateCodeFormatter();
 		addExexcuteListener();
 	}
 	
