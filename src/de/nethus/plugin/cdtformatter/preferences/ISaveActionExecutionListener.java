@@ -1,15 +1,28 @@
+package de.nethus.plugin.cdtformatter.preferences;
+
 /*******************************************************************************
  * Copyright (c) 2014 Alex Jahl
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * All rights reserved.
+ * 
+ * Licensed under the EUPL, Version 1.1 or (as soon they
+ * will be approved by the European Commission) subsequent
+ * versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ * 
+ * http://ec.europa.eu/idabc/eupl5
+ * 
+ * Unless required by applicable law or agreed to in
+ * writing, software distributed under the Licence is
+ * distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied.
+ * See the Licence for the specific language governing
+ * permissions and limitations under the Licence.
  *
  * Contributors:
  * 	   Alex Jahl
  *******************************************************************************/
-
-package de.nethus.plugin.cdtformatter.preferences;
 
 import org.eclipse.cdt.core.formatter.CodeFormatter;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -29,7 +42,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.editors.text.TextEditor;
 
 import de.nethus.plugin.cdtformatter.CDTFormatter;
-
 
 public class ISaveActionExecutionListener implements IExecutionListener {
 	

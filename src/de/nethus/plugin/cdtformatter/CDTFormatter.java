@@ -1,14 +1,29 @@
 package de.nethus.plugin.cdtformatter;
+
 /*******************************************************************************
  * Copyright (c) 2014 Alex Jahl
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * All rights reserved.
+ * 
+ * Licensed under the EUPL, Version 1.1 or (as soon they
+ * will be approved by the European Commission) subsequent
+ * versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ * 
+ * http://ec.europa.eu/idabc/eupl5
+ * 
+ * Unless required by applicable law or agreed to in
+ * writing, software distributed under the Licence is
+ * distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied.
+ * See the Licence for the specific language governing
+ * permissions and limitations under the Licence.
  *
  * Contributors:
  * 	   Alex Jahl
  *******************************************************************************/
+
 import org.eclipse.cdt.core.ToolFactory;
 import org.eclipse.cdt.core.formatter.CodeFormatter;
 import org.eclipse.core.commands.Command;
@@ -34,41 +49,6 @@ public class CDTFormatter  {
 	}
 	
 	public CodeFormatter getOrCreateCodeFormatter() {
-//		HashMap<String, String> pluginOptions = CCorePlugin.getOptions();
-//		String formatterID = (String) pluginOptions
-//				.get(CCorePreferenceConstants.CODE_FORMATTER);
-//		String extID = CCorePlugin.FORMATTER_EXTPOINT_ID;
-//		IExtensionPoint extension = Platform.getExtensionRegistry()
-//				.getExtensionPoint(CCorePlugin.PLUGIN_ID, extID);
-//		if (extension != null) {
-//			IExtension[] extensions = extension.getExtensions();
-//			for (int i = 0; i < extensions.length; i++) {
-//				IConfigurationElement[] configElements = extensions[i]
-//						.getConfigurationElements();
-//				
-//				for (int j = 0; j < configElements.length; j++) {
-//					String initializerID = configElements[j].getAttribute("id"); //$NON-NLS-1$
-//					
-//					if (initializerID != null
-//							&& initializerID.equals(formatterID)) {
-//						try {
-//							Object execExt = configElements[j]
-//									.createExecutableExtension("class"); //$NON-NLS-1$
-//							if (execExt instanceof CodeFormatter) {
-//								CodeFormatter formatter = (CodeFormatter) execExt;
-//								formatter.setOptions(pluginOptions);
-//								return formatter;
-//							}
-//						} catch (CoreException e) {
-//							CCorePlugin.log(e.getStatus());
-//							break;
-//						}
-//					}
-//				}
-//			}
-//		}
-//		Map<String, ?> options = DefaultCodeFormatterConstants .getDefaultSettings();
-		
 		CodeFormatter codeFormatter = ToolFactory.createCodeFormatter(null);
 		return codeFormatter;
 	}
