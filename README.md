@@ -1,2 +1,2 @@
 # CDTFomratter
-extends preferences - auto format on save
+extends preferences - auto format on save 
